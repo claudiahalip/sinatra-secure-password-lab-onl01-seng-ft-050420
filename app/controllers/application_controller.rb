@@ -39,7 +39,8 @@ class ApplicationController < Sinatra::Base
 
   post "/login" do
     ##your code here
-    user = User.find_by()
+    user = User.find_by(username: params[:username])
+    if user && user.authenticate
   end
 
   get "/failure" do
